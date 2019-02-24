@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.3.1.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 	<style>
         .myProgress {
@@ -35,8 +34,7 @@
 		
 		body {
 			background-image: url('background.png');
-			background-repeat: no-repeat;
-			background-color: white;
+			background-color: lightblue;
 			background-size: cover;
 			background-position: center;
 			color: black;
@@ -55,110 +53,205 @@
 			</div>
 			<br>
 			<button class="btn btn-secondary" onclick="buy('bongsprice', 'boo', 'bongscount', 2, false, 2.5)">Buy (<span id="bongsprice">1</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-		</div>
-		<div>
-			<hr>
-			<h3>Turtle x<span id="turtlecount">0</span></h3>
-			<img src="Turtle.png" height="69">
-			<button class="btn btn-secondary" onclick="buy('turtleprice', 'turtlebar', 'turtlecount', 2.5, true, 5)">Buy (<span id="turtleprice">5</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-			<br>
-			<div class="myProgress">
-				<div class="myBar" id="turtlebar">0</div>
-			</div>
-		</div>
-		<div>
-			<hr>
-			<h3>Potato x<span id="potatocount">0</span></h3>
-			<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/1/11/Baked_Potato.png" height="69">
-			<button class="btn btn-secondary" onclick="buy('potatoprice', 'potatobar', 'potatocount', 12.5, true, 8)">Buy (<span id="potatoprice">25</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-			<br>
-			<div class="myProgress">
-				<div class="myBar" id="potatobar">0</div>
-			</div>
-		</div>
-		<div>
-			<hr>
-			<h3>Command Block x<span id="cmdcount">0</span></h3>
-			<img src="http://www.techacademymn.com/wp-content/uploads/2018/02/commandblock.png" height="69">
-			<button class="btn btn-secondary" onclick="buy('cmdprice', 'cmdbar', 'cmdcount', 62.5, true, 16)">Buy (<span id="cmdprice">125</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-			<br>
-			<div class="myProgress">
-				<div class="myBar" id="cmdbar">0</div>
-			</div>
-		</div>
-		<div>
-			<hr>
-			<h3>Hay.com Machine x<span id="haycount">0</span></h3>
-			<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
-			<button class="btn btn-secondary" onclick="buy('hayprice', 'haybar', 'haycount', 312.5, true, 24)">Buy (<span id="hayprice">625</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-			<br>
-			<div class="myProgress">
-				<div class="myBar" id="haybar">0</div>
-			</div>
-		</div>
-		<div>
-			<hr>
-			<h3>Epic Stone x<span id="epiccount">0</span></h3>
-			<img src="epicrock.png" height="69">
-			<button class="btn btn-secondary" onclick="buy('epicprice', 'epicbar', 'epiccount', 1562.5, true, 48); if ($('#epiccount').html() == 30) {$('#locked').fadeIn();}">Buy (<span id="epicprice">3125</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button> <!-- You will unlock new stuff when you have 30 epic stones! -->
-			<br>
-			<div class="myProgress">
-				<div class="myBar" id="epicbar">0</div>
-			</div>
-		</div>
-		<div id="locked">
-			<br>
-			<h4>You unlocked new stuff!</h4>
-			<div>
-				<hr>
-				<h3>Pig x<span id="pigcount">0</span></h3>
-				<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
-				<button class="btn btn-secondary" onclick="buy('pigprice', 'pigbar', 'pigcount', 10, true, 2.5)">Buy (<span id="pigprice">10</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				<br>
-				<div class="myProgress">
-					<div class="myBar" id="pigbar">0</div>
+		</div><br>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upgrades</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div>
+                    <br>
+                    <h3>Turtle x<span id="turtlecount">0</span></h3>
+                    <img src="Turtle.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('turtleprice', 'turtlebar', 'turtlecount', 8, true, 5)">Buy (<span id="turtleprice">4</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="turtlebar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Potato x<span id="potatocount">0</span></h3>
+                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/1/11/Baked_Potato.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('potatoprice', 'potatobar', 'potatocount', 96, true, 8)">Buy (<span id="potatoprice">48</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="potatobar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Command Block x<span id="cmdcount">0</span></h3>
+                    <img src="http://www.techacademymn.com/wp-content/uploads/2018/02/commandblock.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('cmdprice', 'cmdbar', 'cmdcount', 1152, true, 16)">Buy (<span id="cmdprice">576</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="cmdbar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Hay.com Machine x<span id="haycount">0</span></h3>
+                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('hayprice', 'haybar', 'haycount', 13824, true, 24)">Buy (<span id="hayprice">6,912</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="haybar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Epic Stone x<span id="epiccount">0</span></h3>
+                    <img src="epicrock.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('epicprice', 'epicbar', 'epiccount', 165888, true, 48); if ($('#epiccount').html() == 30) {$('#locked').fadeIn();}">Buy (<span id="epicprice">82,944</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button> <!-- You will unlock new stuff when you have 30 epic stones! -->
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="epicbar">0</div>
+                    </div>
+                </div>
+                <div id="locked">
+                    <br>
+                    <h4>You unlocked new stuff!</h4>
+                    <div>
+                        <hr>
+                        <h3>Pig x<span id="pigcount">0</span></h3>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
+                        <button class="btn btn-secondary" onclick="buy('pigprice', 'pigbar', 'pigcount', 10, true, 2.5)">Buy (<span id="pigprice">10</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="pigbar">0</div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        <h3>Chicken x<span id="chickencount">0</span></h3>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
+                        <button class="btn btn-secondary" onclick="buy('chickenprice', 'chickenbar', 'chickencount', 99, true, 1.25)">Buy (<span id="chickenprice">100</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="chickenbar">0</div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        <h3>Silverfish x<span id="fishcount">0</span></h3>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
+                        <button class="btn btn-secondary" onclick="buy('fishprice', 'fishbar', 'fishcount', 998, true, 0.625)">Buy (<span id="fishprice">1,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="fishbar">0</div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        <h3>Redstone x<span id="redcount">0</span></h3>
+                        <img src="redstone_wire.png" height="69">
+                        <button class="btn btn-secondary" onclick="buy('redprice', 'redbar', 'redcount', 9997, true, 0.3125)">Buy (<span id="redprice">10,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="redbar">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div id="bettermilk">
+					<br>
+					<h3>Bigger Cows</h3>
+					<h4>Cows: Milk x2</h4>
+					<img src="https://crafatar.com/avatars/f159b274-c22e-4340-b7c1-52abde147713?size=100" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('bettermilk-p', 'bettermilk', 'boo', 2)">Buy (<span id="bettermilk-p">5,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
-			</div>
-			<div>
-				<hr>
-				<h3>Chicken x<span id="chickencount">0</span></h3>
-				<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
-				<button class="btn btn-secondary" onclick="buy('chickenprice', 'chickenbar', 'chickencount', 99, true, 1.25)">Buy (<span id="chickenprice">100</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				<br>
-				<div class="myProgress">
-					<div class="myBar" id="chickenbar">0</div>
+				<div id="superturtle">
+					<hr>
+					<h3>Super Turtle Powers</h3>
+					<h4>Turtles: Milk x2</h4>
+					<img src="asdf.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('superturtle-p', 'superturtle', 'turtlebar', 2)">Buy (<span id="superturtle-p">10,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
-			</div>
-			<div>
-				<hr>
-				<h3>Silverfish x<span id="fishcount">0</span></h3>
-				<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
-				<button class="btn btn-secondary" onclick="buy('fishprice', 'fishbar', 'fishcount', 998, true, 0.625)">Buy (<span id="fishprice">1000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				<br>
-				<div class="myProgress">
-					<div class="myBar" id="fishbar">0</div>
+				<div id="potatofarm">
+					<hr>
+					<h3>Potato Farms</h3>
+					<h4>Potatoes: Milk x2</h4>
+					<img src="potatoes.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('potatofarm-p', 'potatofarm', 'potatobar', 2)">Buy (<span id="potatofarm-p">25,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
-			</div>
-			<div>
-				<hr>
-				<h3>Redstone x<span id="redcount">0</span></h3>
-				<img src="redstone_wire.png" height="69">
-				<button class="btn btn-secondary" onclick="buy('redprice', 'redbar', 'redcount', 9997, true, 0.3125)">Buy (<span id="redprice">10000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				<br>
-				<div class="myProgress">
-					<div class="myBar" id="redbar">0</div>
+				<div id="givecmd">
+					<hr>
+					<h3>/give Commands</h3>
+					<h4>Command Blocks: Milk x2</h4>
+					<img src="http://www.techacademymn.com/wp-content/uploads/2018/02/commandblock.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('givecmd-p', 'givecmd', 'cmdbar', 2)">Buy (<span id="givecmd-p">75,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
-			</div>
-		</div>
+				<div id="pigclicker">
+					<hr>
+					<h3>Pig Clickers</h3>
+					<h4>Hay.com Machines: Milk x2</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigclicker-p', 'pigclicker', 'haybar', 2)">Buy (<span id="pigclicker-p">100,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="modlymod">
+					<hr>
+					<h3>Modly Mods</h3>
+					<h4>Epic Stones: Milk x2</h4>
+					<img src="https://epicmc.rocks/modly/images/extension_icon.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('modlymod-p', 'modlymod', 'epicbar', 2)">Buy (<span id="modlymod-p">125,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigupgrade">
+					<br>
+					<h3>Bacon and Milk</h3>
+					<h4>Pigs: Milk x2</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigupgrade-p', 'pigupgrade', 'pigbar', 2)">Buy (<span id="pigupgrade-p">10M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="chickenupgrade">
+					<hr>
+					<h3>More Feathers</h3>
+					<h4>Chickens: Milk x2</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p', 'chickenupgrade', 'chickenbar', 2)">Buy (<span id="chickenupgrade-p">100M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="silverfishupgrade">
+					<hr>
+					<h3>Monster Egg Blocks</h3>
+					<h4>Silverfish: Milk x2</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p', 'silverfishupgrade', 'fishbar', 2)">Buy (<span id="silverfishupgrade-p">1B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="redstoneupgrade">
+					<hr>
+					<h3>Faster Repeaters</h3>
+					<h4>Redstone: Milk x2</h4>
+					<img src="redstone_wire.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p', 'redstoneupgrade', 'redbar', 2)">Buy (<span id="redstoneupgrade-p">10B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff">
+					<hr>
+					<h3>Giant Buckets</h3>
+					<h4>Everything: Milk x2</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p', 'randomstuff', 2)">Buy (<span id="randomstuff-p">100B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+            </div>
+        </div>
 		<br>
 		<br>
 		<br>
 		<br>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://epicmc.rocks/derpythingy.js"></script>
         <script>
             var money = 0;
             function move(bar, speed) {
                 var elem = document.getElementById(bar); 
-                var moneyz = parseFloat($('#' + bar).html());
+                var moneyz = _.num.parse($('#' + bar).html());
                 var width = 1; 
                 if (elem.style.width == '0%' || elem.style.width == '') {  
                 } else {
@@ -170,7 +263,7 @@
                         clearInterval(id); 
                         elem.style.width = '0%';
                         money += moneyz; 
-                    	$('#mcount').html(abbrNum(money, 3));
+                    	$('#mcount').html(_.num.withCommas(_.num.formatNumber(money)));
                     } else {
                         width = width + 0.5;
                         elem.style.width = width + '%';
@@ -179,63 +272,55 @@
             }
             
             function buy(priceId, bar, count, origPrice, isAuto, speed) {
-                var price = parseFloat($('#' + priceId).html());
+                var price = _.num.parse($('#' + priceId).html());
                 if (money < price) {
                 	alert('Not enough milk!');   
                 } else {
                     money = money - price;
-                	$('#mcount').html(abbrNum(money, 3));
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumber(money)));
 					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
 					audio.play(); // Hurrrr...
                     $('#' + count).html(parseFloat($('#' + count).html()) + 1);
-                    $('#' + bar).html(Math.ceil((parseFloat($('#' + bar).html()) * 1.1 + origPrice)));
-                    $('#' + priceId).html(Math.ceil(parseFloat($('#' + priceId).html()) * 1.15));
+                    $('#' + bar).html(_.num.withCommas(_.num.formatNumber(Math.ceil((_.num.parse($('#' + bar).html()) * 1.1 + origPrice)))));
+                    $('#' + priceId).html(_.num.withCommas(_.num.formatNumber(Math.ceil((_.num.parse($('#' + priceId).html()) * 1.12)))));
                     if (isAuto && $('#' + count).html() == 1) {
                 		setInterval(move, 30, bar, speed);
                 	}
                 }
             }
 			
-			function numberWithCommas(x) {
-				var parts = x.toString().split(".");
-				parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-				return parts.join(".");
-			}
-		
-			function abbrNum(number, decPlaces) {
-				// 2 decimal places => 100, 3 => 1000, etc
-				decPlaces = Math.pow(10,decPlaces);
-
-				// Enumerate number abbreviations
-				var abbrev = ["K", "M", "B", "T", 'Q'];
-
-				// Go through the array backwards, so we do the largest first
-				for (var i=abbrev.length-1; i>=0; i--) {
-
-					// Convert array index to "1000", "1000000", etc
-					var size = Math.pow(10,(i+1)*3);
-
-					// If the number is bigger or equal do the abbreviation
-					if(size <= number) {
-						 // Here, we multiply by decPlaces, round, and then divide by decPlaces.
-						 // This gives us nice rounding to a particular decimal place.
-						 number = Math.round(number*decPlaces/size)/decPlaces;
-
-						 // Handle special case where we round up to the next abbreviation
-						 if((number == 1000) && (i < abbrev.length - 1)) {
-							 number = 1;
-							 i++;
-						 }
-
-						 // Add the letter for the abbreviation
-						 number += abbrev[i];
-
-						 // We are done... stop
-						 break;
-					}
+			function buyUpgrade(priceId, divId, barToMultiply, m) {
+				var price = _.num.parse($('#' + priceId).html());
+				if ($('#' + barToMultiply).html() == 0) {
+					alert('You don\'t have this item! Buy it in the shop!');
+					return;
 				}
-
-				return number;
+				if (money < price) {
+                	alert('Not enough milk!'); 
+                } else {
+                    money = money - price;
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumber(money)));
+					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
+					audio.play(); // Hurrrr...
+                    $('#' + divId).fadeOut();
+					$('#' + barToMultiply).html(_.num.withCommas(_.num.formatNumber(_.num.parse($('#' + barToMultiply).html()) * m)));
+                }
+			}
+			
+			function buyEverythingUpgrade(priceId, divId, m) {
+				var price = _.num.parse($('#' + priceId).html());
+				if (money < price) {
+                	alert('Not enough milk!'); 
+                } else {
+                    money = money - price;
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumber(money)));
+					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
+					audio.play(); // Hurrrr...
+                    $('#' + divId).fadeOut();
+					for (var i = 0; i < _.c('.myBar'); i++) {
+						_.i('.myBar', i).e(_.num.withCommas(_.num.formatNumber(_.num.parse(_.i('.myBar', i).c) * m)));
+					}
+                }
 			}
         </script>
 	</body>
