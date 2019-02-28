@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
-	<style>
-        .myProgress {
-            width: 50%;
-            background-color: #ccc;
-        }
-        .myBar {
-            width: 0%;
-            height: 35px;
-            background-color: #2da82d;
-            font-weight: bold;
-            font-size: 25px;
-        }
-		
-		#mcount {
-			font-family: monospace;
-			font-weight: bold;
-		}
-		
-		.mooo:hover {
-			cursor: pointer;
-		}
-		
-		.display-4 {
-			font-family: 'Lobster Two', cursive;
-		}
-		
-		#locked {
-			display: none;
-		}
-		
-		body {
-			background-image: url('background.png');
-			background-color: lightblue;
-			background-size: cover;
-			background-position: center;
-			color: black;
-		}
-    </style>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+		<title>Cow Clicker!</title>
+		<meta charset="UTF-8">
+		<style>
+			.myProgress {
+				width: 50%;
+				background-color: #ccc;
+			}
+			.myBar {
+				width: 0%;
+				height: 35px;
+				background-color: #2da82d;
+				font-weight: bold;
+				font-size: 25px;
+			}
+			
+			#mcount {
+				font-family: monospace;
+				font-weight: bold;
+			}
+			
+			.mooo:hover {
+				cursor: pointer;
+			}
+			
+			.display-4 {
+				font-family: 'Lobster Two', cursive;
+			}
+			
+			#locked {
+				display: none;
+			}
+			
+			body {
+				background-image: url('background.png');
+				background-color: lightblue;
+				background-size: cover;
+				background-position: center;
+				color: black;
+			}
+		</style>
+	</head>
 	<body class="container container-fluid">	
 		<br>
 		<h1 class="display-4" onclick="var audio = new Audio('http://mattersofgrey.com/audio/Minecraft-cow3.mp3'); audio.play()" class="mooo">Cow Clicker!</h1>
@@ -236,6 +240,83 @@
 					<h4>Everything: Milk x2</h4>
 					<img src="Milk_Bucket.png" height="69">
 					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p', 'randomstuff', 2)">Buy (<span id="randomstuff-p">100B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="bettermilk2">
+					<hr>
+					<h3>Better Cows</h3>
+					<h4>Cows: Milk x3</h4>
+					<img src="https://crafatar.com/avatars/f159b274-c22e-4340-b7c1-52abde147713?size=100" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('bettermilk-p2', 'bettermilk2', 'boo', 3)">Buy (<span id="bettermilk-p2">1T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="superturtle2">
+					<hr>
+					<h3>Sea Turtles</h3>
+					<h4>Turtles: Milk x3</h4>
+					<img src="asdf.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('superturtle-p2', 'superturtle2', 'turtlebar', 3)">Buy (<span id="superturtle-p2">10T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="potatofarm2">
+					<hr>
+					<h3>Potato Houses</h3>
+					<h4>Potatoes: Milk x3</h4>
+					<img src="potatoes.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('potatofarm-p2', 'potatofarm2', 'potatobar', 3)">Buy (<span id="potatofarm-p2">100T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="givecmd2">
+					<hr>
+					<h3>Robotic Milk Makers</h3>
+					<h4>Command Blocks: Milk x3</h4>
+					<img src="http://www.techacademymn.com/wp-content/uploads/2018/02/commandblock.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('givecmd-p2', 'givecmd2', 'cmdbar', 3)">Buy (<span id="givecmd-p2">1P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigclicker2">
+					<hr>
+					<h3>Browser HackPads</h3>
+					<h4>Hay.com Machines: Milk x3</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigclicker-p2', 'pigclicker2', 'haybar', 3)">Buy (<span id="pigclicker-p2">10P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="modlymod2">
+					<hr>
+					<h3>More Mods with Milk</h3>
+					<h4>Epic Stones: Milk x3</h4>
+					<img src="https://epicmc.rocks/modly/images/extension_icon.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('modlymod-p2', 'modlymod2', 'epicbar', 3)">Buy (<span id="modlymod-p2">100P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigupgrade2">
+					<br>
+					<h3>Pig-Cows</h3>
+					<h4>Pigs: Milk x3</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigupgrade-p2', 'pigupgrade2', 'pigbar', 3)">Buy (<span id="pigupgrade-p2">1E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="chickenupgrade2">
+					<hr>
+					<h3>Milk and Eggs</h3>
+					<h4>Chickens: Milk x3</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p2', 'chickenupgrade2', 'chickenbar', 3)">Buy (<span id="chickenupgrade-p2">10E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="silverfishupgrade2">
+					<hr>
+					<h3>Gold Fish</h3>
+					<h4>Silverfish: Milk x3</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p2', 'silverfishupgrade2', 'fishbar', 3)">Buy (<span id="silverfishupgrade-p2">100E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="redstoneupgrade2">
+					<hr>
+					<h3>Redstone Milk Generators</h3>
+					<h4>Redstone: Milk x3</h4>
+					<img src="redstone_wire.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p2', 'redstoneupgrade2', 'redbar', 3)">Buy (<span id="redstoneupgrade-p2">1Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff2">
+					<hr>
+					<h3>Cows Take Over</h3>
+					<h4>Everything: Milk x3</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p2', 'randomstuff2', 3)">Buy (<span id="randomstuff-p2">10Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
             </div>
         </div>
