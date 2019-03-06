@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<style>
 			.myProgress {
-				width: 100%;
+				width: 50%;
 				background-color: #ccc;
 			}
 			.myBar {
@@ -23,7 +23,7 @@
 				font-weight: bold;
 			}
 			
-			img:hover {
+			.mooo:hover {
 				cursor: pointer;
 			}
 			
@@ -65,17 +65,14 @@
             <li class="nav-item">
                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upgrades</a>
             </li>
-			<li class="nav-item">
-                <a class="nav-link" id="potato-tab" data-toggle="tab" href="#potato" role="tab" aria-controls="potato" aria-selected="false">Managers</a>
-            </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div>
                     <br>
                     <h3>Turtle x<span id="turtlecount">0</span></h3>
-                    <img src="Turtle.png" height="69" onclick="move('turtlebar', 5)">
-                    <button class="btn btn-secondary" onclick="buy('turtleprice', 'turtlebar', 'turtlecount', 8, false, 5)">Buy (<span id="turtleprice">4</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <img src="Turtle.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('turtleprice', 'turtlebar', 'turtlecount', 8, true, 5)">Buy (<span id="turtleprice">4</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                     <br>
                     <div class="myProgress">
                         <div class="myBar" id="turtlebar">0</div>
@@ -84,8 +81,8 @@
                 <div>
                     <hr>
                     <h3>Potato x<span id="potatocount">0</span></h3>
-                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/1/11/Baked_Potato.png" height="69" onclick="move('potatobar', 8)">
-                    <button class="btn btn-secondary" onclick="buy('potatoprice', 'potatobar', 'potatocount', 96, false, 8)">Buy (<span id="potatoprice">48</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/1/11/Baked_Potato.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('potatoprice', 'potatobar', 'potatocount', 96, true, 8)">Buy (<span id="potatoprice">48</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                     <br>
                     <div class="myProgress">
                         <div class="myBar" id="potatobar">0</div>
@@ -94,8 +91,8 @@
                 <div>
                     <hr>
                     <h3>Command Block x<span id="cmdcount">0</span></h3>
-                    <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69" onclick="move('cmdbar', 16)">
-                    <button class="btn btn-secondary" onclick="buy('cmdprice', 'cmdbar', 'cmdcount', 1152, false, 16)">Buy (<span id="cmdprice">576</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69">
+                    <button class="btn btn-secondary" onclick="buy('cmdprice', 'cmdbar', 'cmdcount', 1152, true, 16)">Buy (<span id="cmdprice">576</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                     <br>
                     <div class="myProgress">
                         <div class="myBar" id="cmdbar">0</div>
@@ -104,8 +101,8 @@
                 <div>
                     <hr>
                     <h3>Hay.com Machine x<span id="haycount">0</span></h3>
-                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69" onclick="move('haybar', 24)">
-                    <button class="btn btn-secondary" onclick="buy('hayprice', 'haybar', 'haycount', 13824, false, 24)">Buy (<span id="hayprice">6,912</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('hayprice', 'haybar', 'haycount', 13824, true, 24)">Buy (<span id="hayprice">6,912</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                     <br>
                     <div class="myProgress">
                         <div class="myBar" id="haybar">0</div>
@@ -114,8 +111,8 @@
                 <div>
                     <hr>
                     <h3>Epic Stone x<span id="epiccount">0</span></h3>
-                    <img src="epicrock.png" height="69" onclick="move('epicbar', 48)">
-                    <button class="btn btn-secondary" onclick="buy('epicprice', 'epicbar', 'epiccount', 165888, false, 48); if ($('#epiccount').html() == 30) {$('#locked').fadeIn();}">Buy (<span id="epicprice">82,944</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button> <!-- You will unlock new stuff when you have 30 epic stones! -->
+                    <img src="epicrock.png" height="69">
+                    <button class="btn btn-secondary" onclick="buy('epicprice', 'epicbar', 'epiccount', 165888, true, 48); if ($('#epiccount').html() == 30) {$('#locked').fadeIn();}">Buy (<span id="epicprice">82,944</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button> <!-- You will unlock new stuff when you have 30 epic stones! -->
                     <br>
                     <div class="myProgress">
                         <div class="myBar" id="epicbar">0</div>
@@ -322,50 +319,6 @@
 					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p2', 'randomstuff2', 3)">Buy (<span id="randomstuff-p2">10Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
             </div>
-			<div class="tab-pane fade" id="potato" role="tabpanel" aria-labelledby="potato-tab">
-				<div id="milkmanager">
-					<hr>
-					<h3>Nilkee Mowee</h3>
-					<h4>Runs Cows</h4>
-					<img src="milkeethingy.png" height="69">
-					<button class="btn btn-secondary" onclick="buyManager('milkmanager-p', 'milkmanager', 'boo', 2.5)">Buy (<span id="milkmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				</div>
-				<div id="turtlemanager">
-					<hr>
-					<h3>Slowiehead Boo</h3>
-					<h4>Runs Turtles</h4>
-					<img src="Turtle.png" height="69">
-					<button class="btn btn-secondary" onclick="buyManager('turtlemanager-p', 'turtlemanager', 'turtlebar', 5)">Buy (<span id="turtlemanager-p">5,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				</div>
-				<div id="potatomanager">
-					<hr>
-					<h3>Pot A. Tosong</h3>
-					<h4>Runs Potatoes</h4>
-					<img src="potatothingy.png" height="69">
-					<button class="btn btn-secondary" onclick="buyManager('potatomanager-p', 'potatomanager', 'potatobar', 8)">Buy (<span id="potatomanager-p">7,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				</div>
-				<div id="cmdmanager">
-					<hr>
-					<h3>C. Pnatato</h3>
-					<h4>Runs Command Blocks</h4>
-					<img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69">
-					<button class="btn btn-secondary" onclick="buyManager('cmdmanager-p', 'cmdmanager', 'cmdbar', 16)">Buy (<span id="cmdmanager-p">10,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				</div>
-				<div id="haymanager">
-					<hr>
-					<h3>Sircow Browsepad</h3>
-					<h4>Runs Hay.com Machines</h4>
-					<img src="haythingee.png" height="69">
-					<button class="btn btn-secondary" onclick="buyManager('haymanager-p', 'haymanager', 'haybar', 24)">Buy (<span id="haymanager-p">25,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				</div>
-				<div id="epicmanager">
-					<hr>
-					<h3>See L. Puternedr</h3>
-					<h4>Runs Epic Stones</h4>
-					<img src="epicrock.png" height="69">
-					<button class="btn btn-secondary" onclick="buyManager('epicmanager-p', 'epicmanager', 'epicbar', 48)">Buy (<span id="epicmanager-p">75,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
-				</div>
-			</div>
         </div>
 		<br>
 		<br>
@@ -416,24 +369,6 @@
                 	}
                 }
             }
-			
-			function buyManager(priceId, divId, barToManage, speed) {
-				var price = _.num.parse($('#' + priceId).html());
-				if ($('#' + barToManage).html() == 0) {
-					alert('You don\'t have this item! Buy it in the shop!');
-					return;
-				}
-				if (money < price) {
-                	alert('Not enough milk!'); 
-                } else {
-                    money = money - price;
-                	$('#mcount').html(_.num.withCommas(_.num.formatNumber(money)));
-					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
-					audio.play(); // Hurrrr...
-                    $('#' + divId).fadeOut();
-					setInterval(move, 30, barToManage, speed);
-                }
-			}
 			
 			function buyUpgrade(priceId, divId, barToMultiply, m) {
 				var price = _.num.parse($('#' + priceId).html());
