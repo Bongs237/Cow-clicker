@@ -50,13 +50,6 @@
 		<div>
 			<hr>
 			<h1><img src="Milk_Bucket.png" alt="Milk: " height="25">&nbsp;<span id="mcount">0</span></h1>
-			<h3>Cow x<span id="bongscount">1</span></h3>
-			<img src="Cow.png" alt="Cow" height="200" onclick="move('boo', 2.5)" class="mooo">
-			<div class="myProgress">
-				<div class="myBar" id="boo">1</div>
-			</div>
-			<br>
-			<button class="btn btn-secondary" onclick="buy('bongsprice', 'boo', 'bongscount', 2, false, 2.5)">Buy (<span id="bongsprice">1</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 		</div><br>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -71,6 +64,16 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div>
+					<br>
+					<h3>Cow x<span id="bongscount">1</span></h3>
+					<img src="Cow.png" alt="Cow" height="69" onclick="move('boo', 2.5)" class="mooo">
+					<div class="myProgress">
+						<div class="myBar" id="boo">1</div>
+					</div>
+					<br>
+					<button class="btn btn-secondary" onclick="buy('bongsprice', 'boo', 'bongscount', 2, false, 2.5)">Buy (<span id="bongsprice">1</span><img src="Milk_Bucket.png" alt="milk bucket"height="15">)</button>
+				</div>
                 <div>
                     <br>
                     <h3>Turtle x<span id="turtlecount">0</span></h3>
@@ -127,8 +130,8 @@
                     <div>
                         <hr>
                         <h3>Pig x<span id="pigcount">0</span></h3>
-                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
-                        <button class="btn btn-secondary" onclick="buy('pigprice', 'pigbar', 'pigcount', 10, true, 2.5)">Buy (<span id="pigprice">10</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69" onclick="move('pigbar', 2.5)">
+                        <button class="btn btn-secondary" onclick="buy('pigprice', 'pigbar', 'pigcount', 10, false, 2.5)">Buy (<span id="pigprice">10</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                         <br>
                         <div class="myProgress">
                             <div class="myBar" id="pigbar">0</div>
@@ -137,8 +140,8 @@
                     <div>
                         <hr>
                         <h3>Chicken x<span id="chickencount">0</span></h3>
-                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
-                        <button class="btn btn-secondary" onclick="buy('chickenprice', 'chickenbar', 'chickencount', 99, true, 1.25)">Buy (<span id="chickenprice">100</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69" onclick="move('chickenbar', 1.25)">
+                        <button class="btn btn-secondary" onclick="buy('chickenprice', 'chickenbar', 'chickencount', 99, false, 1.25)">Buy (<span id="chickenprice">100</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                         <br>
                         <div class="myProgress">
                             <div class="myBar" id="chickenbar">0</div>
@@ -147,8 +150,8 @@
                     <div>
                         <hr>
                         <h3>Silverfish x<span id="fishcount">0</span></h3>
-                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
-                        <button class="btn btn-secondary" onclick="buy('fishprice', 'fishbar', 'fishcount', 998, true, 0.625)">Buy (<span id="fishprice">1,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69" onclick="move('fishbar', 0.625)">
+                        <button class="btn btn-secondary" onclick="buy('fishprice', 'fishbar', 'fishcount', 998, false, 0.625)">Buy (<span id="fishprice">1,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                         <br>
                         <div class="myProgress">
                             <div class="myBar" id="fishbar">0</div>
@@ -157,8 +160,8 @@
                     <div>
                         <hr>
                         <h3>Redstone x<span id="redcount">0</span></h3>
-                        <img src="redstone_wire.png" height="69">
-                        <button class="btn btn-secondary" onclick="buy('redprice', 'redbar', 'redcount', 9997, true, 0.3125)">Buy (<span id="redprice">10,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <img src="redstone_wire.png" height="69" onclick="move('redbar', 0.3125)">
+                        <button class="btn btn-secondary" onclick="buy('redprice', 'redbar', 'redcount', 9997, false, 0.3125)">Buy (<span id="redprice">10,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
                         <br>
                         <div class="myProgress">
                             <div class="myBar" id="redbar">0</div>
@@ -210,7 +213,7 @@
 					<button class="btn btn-secondary" onclick="buyUpgrade('modlymod-p', 'modlymod', 'epicbar', 2)">Buy (<span id="modlymod-p">125,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="pigupgrade">
-					<br>
+					<hr>
 					<h3>Bacon and Milk</h3>
 					<h4>Pigs: Milk x2</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
@@ -221,105 +224,189 @@
 					<h3>More Feathers</h3>
 					<h4>Chickens: Milk x2</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p', 'chickenupgrade', 'chickenbar', 2)">Buy (<span id="chickenupgrade-p">100M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p', 'chickenupgrade', 'chickenbar', 2)">Buy (<span id="chickenupgrade-p">25M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="silverfishupgrade">
 					<hr>
 					<h3>Monster Egg Blocks</h3>
 					<h4>Silverfish: Milk x2</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p', 'silverfishupgrade', 'fishbar', 2)">Buy (<span id="silverfishupgrade-p">1B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p', 'silverfishupgrade', 'fishbar', 2)">Buy (<span id="silverfishupgrade-p">50M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="redstoneupgrade">
 					<hr>
 					<h3>Faster Repeaters</h3>
 					<h4>Redstone: Milk x2</h4>
 					<img src="redstone_wire.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p', 'redstoneupgrade', 'redbar', 2)">Buy (<span id="redstoneupgrade-p">10B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p', 'redstoneupgrade', 'redbar', 2)">Buy (<span id="redstoneupgrade-p">100M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="randomstuff">
 					<hr>
 					<h3>Giant Buckets</h3>
 					<h4>Everything: Milk x2</h4>
 					<img src="Milk_Bucket.png" height="69">
-					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p', 'randomstuff', 2)">Buy (<span id="randomstuff-p">100B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p', 'randomstuff', 2)">Buy (<span id="randomstuff-p">1B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="bettermilk2">
 					<hr>
 					<h3>Better Cows</h3>
 					<h4>Cows: Milk x3</h4>
 					<img src="https://crafatar.com/avatars/f159b274-c22e-4340-b7c1-52abde147713?size=100" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('bettermilk-p2', 'bettermilk2', 'boo', 3)">Buy (<span id="bettermilk-p2">1T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('bettermilk-p2', 'bettermilk2', 'boo', 3)">Buy (<span id="bettermilk-p2">10B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="superturtle2">
 					<hr>
 					<h3>Sea Turtles</h3>
 					<h4>Turtles: Milk x3</h4>
 					<img src="asdf.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('superturtle-p2', 'superturtle2', 'turtlebar', 3)">Buy (<span id="superturtle-p2">10T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('superturtle-p2', 'superturtle2', 'turtlebar', 3)">Buy (<span id="superturtle-p2">50B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="potatofarm2">
 					<hr>
 					<h3>Potato Houses</h3>
 					<h4>Potatoes: Milk x3</h4>
 					<img src="potatoes.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('potatofarm-p2', 'potatofarm2', 'potatobar', 3)">Buy (<span id="potatofarm-p2">100T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('potatofarm-p2', 'potatofarm2', 'potatobar', 3)">Buy (<span id="potatofarm-p2">100B</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="givecmd2">
 					<hr>
 					<h3>Robotic Milk Makers</h3>
 					<h4>Command Blocks: Milk x3</h4>
 					<img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('givecmd-p2', 'givecmd2', 'cmdbar', 3)">Buy (<span id="givecmd-p2">1P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('givecmd-p2', 'givecmd2', 'cmdbar', 3)">Buy (<span id="givecmd-p2">1T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="pigclicker2">
 					<hr>
 					<h3>Browser HackPads</h3>
 					<h4>Hay.com Machines: Milk x3</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('pigclicker-p2', 'pigclicker2', 'haybar', 3)">Buy (<span id="pigclicker-p2">10P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigclicker-p2', 'pigclicker2', 'haybar', 3)">Buy (<span id="pigclicker-p2">10T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="modlymod2">
 					<hr>
 					<h3>More Mods with Milk</h3>
 					<h4>Epic Stones: Milk x3</h4>
 					<img src="https://epicmc.rocks/modly/images/extension_icon.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('modlymod-p2', 'modlymod2', 'epicbar', 3)">Buy (<span id="modlymod-p2">100P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('modlymod-p2', 'modlymod2', 'epicbar', 3)">Buy (<span id="modlymod-p2">25T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="pigupgrade2">
 					<br>
 					<h3>Pig-Cows</h3>
 					<h4>Pigs: Milk x3</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('pigupgrade-p2', 'pigupgrade2', 'pigbar', 3)">Buy (<span id="pigupgrade-p2">1E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigupgrade-p2', 'pigupgrade2', 'pigbar', 3)">Buy (<span id="pigupgrade-p2">50T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="chickenupgrade2">
 					<hr>
 					<h3>Milk and Eggs</h3>
 					<h4>Chickens: Milk x3</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p2', 'chickenupgrade2', 'chickenbar', 3)">Buy (<span id="chickenupgrade-p2">10E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p2', 'chickenupgrade2', 'chickenbar', 3)">Buy (<span id="chickenupgrade-p2">100T</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="silverfishupgrade2">
 					<hr>
-					<h3>Gold Fish</h3>
+					<h3>Goldfish</h3>
 					<h4>Silverfish: Milk x3</h4>
 					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p2', 'silverfishupgrade2', 'fishbar', 3)">Buy (<span id="silverfishupgrade-p2">100E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p2', 'silverfishupgrade2', 'fishbar', 3)">Buy (<span id="silverfishupgrade-p2">1P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="redstoneupgrade2">
 					<hr>
 					<h3>Redstone Milk Generators</h3>
 					<h4>Redstone: Milk x3</h4>
 					<img src="redstone_wire.png" height="69">
-					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p2', 'redstoneupgrade2', 'redbar', 3)">Buy (<span id="redstoneupgrade-p2">1Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p2', 'redstoneupgrade2', 'redbar', 3)">Buy (<span id="redstoneupgrade-p2">10P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 				<div id="randomstuff2">
 					<hr>
 					<h3>Cows Take Over</h3>
 					<h4>Everything: Milk x3</h4>
 					<img src="Milk_Bucket.png" height="69">
-					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p2', 'randomstuff2', 3)">Buy (<span id="randomstuff-p2">10Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p2', 'randomstuff2', 3)">Buy (<span id="randomstuff-p2">25P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="bettermilk3">
+					<hr>
+					<h3>Super Cows</h3>
+					<h4>Cows: Milk x7</h4>
+					<img src="https://crafatar.com/avatars/f159b274-c22e-4340-b7c1-52abde147713?size=100" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('bettermilk-p3', 'bettermilk3', 'boo', 7)">Buy (<span id="bettermilk-p3">50P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="superturtle3">
+					<hr>
+					<h3>I Like Turtles</h3>
+					<h4>Turtles: Milk x7</h4>
+					<img src="asdf.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('superturtle-p3', 'superturtle3', 'turtlebar', 7)">Buy (<span id="superturtle-p3">100P</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="potatofarm3">
+					<hr>
+					<h3>Potato Towns</h3>
+					<h4>Potatoes: Milk x7</h4>
+					<img src="potatoes.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('potatofarm-p3', 'potatofarm3', 'potatobar', 7)">Buy (<span id="potatofarm-p3">1E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="givecmd3">
+					<hr>
+					<h3>One Command Creations</h3>
+					<h4>Command Blocks: Milk x7</h4>
+					<img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('givecmd-p3', 'givecmd3', 'cmdbar', 7)">Buy (<span id="givecmd-p3">10E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigclicker3">
+					<hr>
+					<h3>We Sell Free Horses</h3>
+					<h4>Hay.com Machines: Milk x7</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigclicker-p3', 'pigclicker3', 'haybar', 7)">Buy (<span id="pigclicker-p3">25E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="modlymod3">
+					<hr>
+					<h3>Epic Ores</h3>
+					<h4>Epic Stones: Milk x7</h4>
+					<img src="https://epicmc.rocks/modly/images/extension_icon.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('modlymod-p3', 'modlymod3', 'epicbar', 7)">Buy (<span id="modlymod-p3">30E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigupgrade3">
+					<br>
+					<h3>Pig Pens</h3>
+					<h4>Pigs: Milk x7</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigupgrade-p3', 'pigupgrade3', 'pigbar', 7)">Buy (<span id="pigupgrade-p3">50E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigupgrade3a">
+					<br>
+					<h3>(The Ones You Write With, Too)</h3>
+					<h4>Pigs: Milk x2</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('pigupgrade-p3a', 'pigupgrade3a', 'pigbar', 2)">Buy (<span id="pigupgrade-p3a">50E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="chickenupgrade3">
+					<hr>
+					<h3>Bigger Chickens</h3>
+					<h4>Chickens: Milk x7</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('chickenupgrade-p3', 'chickenupgrade3', 'chickenbar', 7)">Buy (<span id="chickenupgrade-p3">75E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="silverfishupgrade3">
+					<hr>
+					<h3>More Strongholds</h3>
+					<h4>Silverfish: Milk x7</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('silverfishupgrade-p3', 'silverfishupgrade3', 'fishbar', 7)">Buy (<span id="silverfishupgrade-p3">100E</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="redstoneupgrade3">
+					<hr>
+					<h3>Redstone Milk Generators</h3>
+					<h4>Redstone: Milk x7</h4>
+					<img src="redstone_wire.png" height="69">
+					<button class="btn btn-secondary" onclick="buyUpgrade('redstoneupgrade-p3', 'redstoneupgrade3', 'redbar', 7)">Buy (<span id="redstoneupgrade-p3">1Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff3">
+					<hr>
+					<h3>At a Store Near You</h3>
+					<h4>Everything: Milk x7</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p3', 'randomstuff3', 7)">Buy (<span id="randomstuff-p3">5Z</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
             </div>
 			<div class="tab-pane fade" id="potato" role="tabpanel" aria-labelledby="potato-tab">
@@ -364,6 +451,34 @@
 					<h4>Runs Epic Stones</h4>
 					<img src="epicrock.png" height="69">
 					<button class="btn btn-secondary" onclick="buyManager('epicmanager-p', 'epicmanager', 'epicbar', 48)">Buy (<span id="epicmanager-p">75,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigmanager">
+					<hr>
+					<h3>Pogie Mooink</h3>
+					<h4>Runs Pigs</h4>
+					<img src="pigthingee.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('pigmanager-p', 'pigmanager', 'pigbar', 2.5)">Buy (<span id="pigmanager-p">1M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="chickenmanager">
+					<hr>
+					<h3>E. B. Andegg</h3>
+					<h4>Runs Chickens</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('chickenmanager-p', 'chickenmanager', 'chickenbar', 1.25)">Buy (<span id="chickenmanager-p">5M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="fishmanager">
+					<hr>
+					<h3>End R. D. W. Agon</h3>
+					<h4>Runs Silverfish</h4>
+					<img src="thingee.com.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('fishmanager-p', 'fishmanager', 'fishbar', 0.625)">Buy (<span id="fishmanager-p">20M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="redmanager">
+					<hr>
+					<h3>Seut Bildsy Money</h3>
+					<h4>Runs Redstone</h4>
+					<img src="dummy.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('redmanager-p', 'redmanager', 'redbar', 0.3125)">Buy (<span id="redmanager-p">50M</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
 				</div>
 			</div>
         </div>
