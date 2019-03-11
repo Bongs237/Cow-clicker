@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+		<title>Cow Clicker! (Faster Edition)</title>
+		<meta charset="UTF-8">
+		<style>
+			.myProgress {
+				width: 100%;
+				background-color: #ccc;
+			}
+			.myBar {
+				width: 0%;
+				height: 35px;
+				background-color: #f4bf42;
+				font-weight: bold;
+				font-size: 25px;
+				white-space: nowrap;
+			}
+			
+			#mcount {
+				font-family: 'Segoe UI', Arial, sans-serif, monospace;
+				font-weight: bold;
+				font-size: 30px;
+			}
+			
+			img:hover {
+				cursor: pointer;
+			}
+			
+			.display-4 {
+				font-family: 'Lobster Two', cursive;
+			}
+			
+			#locked {
+				display: none;
+			}
+			
+			body {
+				background-image: url('background.png');
+				background-color: lightblue;
+				background-size: cover;
+				background-position: center;
+				color: black;
+				-webkit-touch-callout: none; /* iOS Safari */
+				-webkit-user-select: none; /* Safari */
+				 -khtml-user-select: none; /* Duh duh duh duh duh duh on trthe AychTeeEmL */
+				   -moz-user-select: none; /* Firefox */
+					-ms-user-select: none; /* Internet Explorer/Edge */
+						user-select: none; /* Non-prefixed version, currently
+			}
+		</style>
+	</head>
+	<body class="container container-fluid">	
+		<br>
+		<h1 class="display-4" onclick="var audio = new Audio('http://mattersofgrey.com/audio/Minecraft-cow3.mp3'); audio.play()" class="mooo">Cow Clicker!</h1>
+		<h2 class="">FASTER EDITION</h2>
+		<div>
+			<hr>
+			<h1><img src="Milk_Bucket.png" alt="Milk: " height="25">&nbsp;<span id="mcount">0</span></h1>
+		</div><br>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Upgrades</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" id="potato-tab" data-toggle="tab" href="#potato" role="tab" aria-controls="potato" aria-selected="false">Managers</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div>
+					<br>
+					<h3>Cow x<span id="bongscount">5</span></h3>
+					<img src="Cow.png" alt="Cow" height="69" onclick="move('boo', 2.5)" class="mooo">
+					<button class="btn btn-secondary" onclick="buy('bongsprice', 'boo', 'bongscount', 2, false, 2.5)">Buy (<span id="bongsprice">1</span><img src="Milk_Bucket.png" alt="milk bucket"height="15">)</button>
+					<br>
+					<div class="myProgress">
+						<div class="myBar" id="boo">13</div>
+					</div>
+				</div>
+                <div>
+                    <hr>
+                    <h3>Turtle x<span id="turtlecount">1</span></h3>
+                    <img src="Turtle.png" height="69" onclick="move('turtlebar', 5)">
+                    <button class="btn btn-secondary" onclick="buy('turtleprice', 'turtlebar', 'turtlecount', 8, false, 5)">Buy (<span id="turtleprice">4</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="turtlebar">8</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Potato x<span id="potatocount">0</span></h3>
+                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/1/11/Baked_Potato.png" height="69" onclick="move('potatobar', 8)">
+                    <button class="btn btn-secondary" onclick="buy('potatoprice', 'potatobar', 'potatocount', 96, false, 8)">Buy (<span id="potatoprice">48</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="potatobar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Command Block x<span id="cmdcount">0</span></h3>
+                    <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69" onclick="move('cmdbar', 16)">
+                    <button class="btn btn-secondary" onclick="buy('cmdprice', 'cmdbar', 'cmdcount', 1152, false, 16)">Buy (<span id="cmdprice">576</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="cmdbar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Hay.com Machine x<span id="haycount">0</span></h3>
+                    <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Hay_Bale.png" height="69" onclick="move('haybar', 24)">
+                    <button class="btn btn-secondary" onclick="buy('hayprice', 'haybar', 'haycount', 13824, false, 24)">Buy (<span id="hayprice">6,912</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="haybar">0</div>
+                    </div>
+                </div>
+                <div>
+                    <hr>
+                    <h3>Epic Stone x<span id="epiccount">0</span></h3>
+                    <img src="epicrock.png" height="69" onclick="move('epicbar', 48)">
+                    <button class="btn btn-secondary" onclick="buy('epicprice', 'epicbar', 'epiccount', 165888, false, 48)">Buy (<span id="epicprice">82,944</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button> <!-- You will unlock new stuff when you have 30 epic stones! -->
+                    <br>
+                    <div class="myProgress">
+                        <div class="myBar" id="epicbar">0</div>
+                    </div>
+                </div>
+                <div id="">
+                    <div>
+                        <hr>
+                        <h3>Pig x<span id="pigcount">0</span></h3>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/3/30/Pig.png" height="69" onclick="move('pigbar', 2.5)">
+                        <button class="btn btn-secondary" onclick="buy('pigprice', 'pigbar', 'pigcount', 10, false, 2.5)">Buy (<span id="pigprice">10</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="pigbar">0</div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        <h3>Chicken x<span id="chickencount">0</span></h3>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69" onclick="move('chickenbar', 1.25)">
+                        <button class="btn btn-secondary" onclick="buy('chickenprice', 'chickenbar', 'chickencount', 99, false, 1.25)">Buy (<span id="chickenprice">100</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="chickenbar">0</div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        <h3>Silverfish x<span id="fishcount">0</span></h3>
+                        <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/b/b9/Silverfish.png" height="69" onclick="move('fishbar', 0.625)">
+                        <button class="btn btn-secondary" onclick="buy('fishprice', 'fishbar', 'fishcount', 998, false, 0.625)">Buy (<span id="fishprice">1,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="fishbar">0</div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        <h3>Redstone x<span id="redcount">0</span></h3>
+                        <img src="redstone_wire.png" height="69" onclick="move('redbar', 0.3125)">
+                        <button class="btn btn-secondary" onclick="buy('redprice', 'redbar', 'redcount', 9997, false, 0.3125)">Buy (<span id="redprice">10,000</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+                        <br>
+                        <div class="myProgress">
+                            <div class="myBar" id="redbar">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<div id="randomstuff0">
+					<hr>
+					<h3>Random Stuff</h3>
+					<h4>Everything: Milk x2</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p0', 'randomstuff0', 2)">Buy (<span id="randomstuff-p0">2,019</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff">
+					<hr>
+					<h3>Moooo!</h3>
+					<h4>Everything: Milk x3</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p', 'randomstuff', 3)">Buy (<span id="randomstuff-p">6.8 million</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff2">
+					<hr>
+					<h3>Free Milk</h3>
+					<h4>Everything: Milk x4</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p2', 'randomstuff2', 4)">Buy (<span id="randomstuff-p2">420.134 trillion</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff3">
+					<hr>
+					<h3>Cows or Cows or Cows</h3>
+					<h4>Everything: Milk x5</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p3', 'randomstuff3', 5)">Buy (<span id="randomstuff-p3">5 quintillion</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff4">
+					<hr>
+					<h3>Now with Potatoes</h3>
+					<h4>Everything: Milk x10</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p4', 'randomstuff4', 10)">Buy (<span id="randomstuff-p4">10 septillion</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="randomstuff5">
+					<hr>
+					<h3>YEET!</h3>
+					<h4>Everything: Milk x25</h4>
+					<img src="Milk_Bucket.png" height="69">
+					<button class="btn btn-secondary" onclick="buyEverythingUpgrade('randomstuff-p5', 'randomstuff5', 25)">Buy (<span id="randomstuff-p5">1.23 decillion</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+            </div>
+			<div class="tab-pane fade" id="potato" role="tabpanel" aria-labelledby="potato-tab">
+				<div id="milkmanager">
+					<hr>
+					<h3>Nilkee Mowee</h3>
+					<h4>Runs Cows</h4>
+					<img src="milkeethingy.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('milkmanager-p', 'milkmanager', 'boo', 2.5)">Buy (<span id="milkmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="turtlemanager">
+					<hr>
+					<h3>Slowiehead Boo</h3>
+					<h4>Runs Turtles</h4>
+					<img src="Turtle.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('turtlemanager-p', 'turtlemanager', 'turtlebar', 5)">Buy (<span id="turtlemanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="potatomanager">
+					<hr>
+					<h3>Pot A. Tosong</h3>
+					<h4>Runs Potatoes</h4>
+					<img src="potatothingy.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('potatomanager-p', 'potatomanager', 'potatobar', 8)">Buy (<span id="potatomanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="cmdmanager">
+					<hr>
+					<h3>Cool M. Ad</h3>
+					<h4>Runs Command Blocks</h4>
+					<img src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('cmdmanager-p', 'cmdmanager', 'cmdbar', 16)">Buy (<span id="cmdmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="haymanager">
+					<hr>
+					<h3>Sir Cow Browsepad</h3>
+					<h4>Runs Hay.com Machines</h4>
+					<img src="haythingee.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('haymanager-p', 'haymanager', 'haybar', 24)">Buy (<span id="haymanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="epicmanager">
+					<hr>
+					<h3>See L. Puternedr</h3>
+					<h4>Runs Epic Stones</h4>
+					<img src="epicrock.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('epicmanager-p', 'epicmanager', 'epicbar', 48)">Buy (<span id="epicmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="pigmanager">
+					<hr>
+					<h3>Pogie Mooink</h3>
+					<h4>Runs Pigs</h4>
+					<img src="pigthingee.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('pigmanager-p', 'pigmanager', 'pigbar', 2.5)">Buy (<span id="pigmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="chickenmanager">
+					<hr>
+					<h3>E. B. Andegg</h3>
+					<h4>Runs Chickens</h4>
+					<img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a3/Chicken.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('chickenmanager-p', 'chickenmanager', 'chickenbar', 1.25)">Buy (<span id="chickenmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="fishmanager">
+					<hr>
+					<h3>End R. D. W. Agon</h3>
+					<h4>Runs Silverfish</h4>
+					<img src="thingee.com.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('fishmanager-p', 'fishmanager', 'fishbar', 0.625)">Buy (<span id="fishmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+				<div id="redmanager">
+					<hr>
+					<h3>Seut Bildsy</h3>
+					<h4>Runs Redstone</h4>
+					<img src="dummy.png" height="69">
+					<button class="btn btn-secondary" onclick="buyManager('redmanager-p', 'redmanager', 'redbar', 0.3125)">Buy (<span id="redmanager-p">2,500</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+				</div>
+			</div>
+        </div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://epicmc.rocks/derpythingy.js"></script>
+        <script>
+            var money = 0;
+            function move(bar, speed) {
+                var elem = document.getElementById(bar); 
+                var moneyz = _.num.parseWords($('#' + bar).html());
+                var width = 1; 
+                if (elem.style.width == '0%' || elem.style.width == '') {  
+                } else {
+                    return;
+                }
+                var id = setInterval(frame, speed); 
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id); 
+                        elem.style.width = '0%';
+                        money += moneyz; 
+                    	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
+                    } else {
+                        width = width + 3;
+                        elem.style.width = width + '%';
+                    }
+                }
+            }
+            
+            function buy(priceId, bar, count, origPrice, isAuto, speed) {
+                var price = _.num.parseWords($('#' + priceId).html());
+                if (money < price) {
+                	alert('Not enough milk!');   
+                } else {
+                    money = Math.ceil(money - price);
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
+					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
+					//audio.play(); // Hurrrr...
+                    $('#' + count).html(parseFloat($('#' + count).html()) + 1);
+                    $('#' + bar).html(_.num.withCommas(_.num.formatNumberWords(Math.ceil((_.num.parseWords($('#' + bar).html()) * 1.4 + origPrice)))));
+                    $('#' + priceId).html(_.num.withCommas(_.num.formatNumberWords(Math.ceil((_.num.parseWords($('#' + priceId).html()) * 1.41)))));
+                    if (isAuto && $('#' + count).html() == 1) {
+                		setInterval(move, 30, bar, speed);
+                	}
+                }
+            }
+			
+			function buyManager(priceId, divId, barToManage, speed) {
+				var price = _.num.parseWords($('#' + priceId).html());
+				if ($('#' + barToManage).html() == 0) {
+					alert('You don\'t have this item! Buy it in the shop!');
+					return;
+				}
+				if (money < price) {
+                	alert('Not enough milk!'); 
+                } else {
+                    money = money - price;
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
+					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
+					//audio.play(); // Hurrrr...
+                    $('#' + divId).fadeOut();
+					setInterval(move, 30, barToManage, speed);
+                }
+			}
+			
+			function buyUpgrade(priceId, divId, barToMultiply, m) {
+				var price = _.num.parseWords($('#' + priceId).html());
+				if ($('#' + barToMultiply).html() == 0) {
+					alert('You don\'t have this item! Buy it in the shop!');
+					return;
+				}
+				if (money < price) {
+                	alert('Not enough milk!'); 
+                } else {
+                    money = money - price;
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
+					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
+					//audio.play(); // Hurrrr...
+                    $('#' + divId).fadeOut();
+					$('#' + barToMultiply).html(_.num.withCommas(_.num.formatNumberWords(_.num.parseWords($('#' + barToMultiply).html()) * m)));
+                }
+			}
+			
+			function buyEverythingUpgrade(priceId, divId, m) {
+				var price = _.num.parseWords($('#' + priceId).html());
+				if (money < price) {
+                	alert('Not enough milk!'); 
+                } else {
+                    money = money - price;
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
+					var audio = new Audio('https://www.myinstants.com/media/sounds/yes1.mp3');
+					//audio.play(); // Hurrrr...
+                    $('#' + divId).fadeOut();
+					for (var i = 0; i < _.c('.myBar'); i++) {
+						_.i('.myBar', i).e(_.num.withCommas(_.num.formatNumberWords(_.num.parseWords(_.i('.myBar', i).c) * m)));
+					}
+                }
+			}
+        </script>
+	</body>
+</html>

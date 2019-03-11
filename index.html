@@ -43,12 +43,23 @@
 				background-size: cover;
 				background-position: center;
 				color: black;
+				-webkit-touch-callout: none; /* iOS Safari */
+				-webkit-user-select: none; /* Safari */
+				 -khtml-user-select: none; /* Duh duh duh duh duh duh on trthe AychTeeEmL */
+				   -moz-user-select: none; /* Firefox */
+					-ms-user-select: none; /* Internet Explorer/Edge */
+						user-select: none; /* Non-prefixed version, currently
+			}
+			
+			.mahh:hover {
+				cursor: default !important;
 			}
 		</style>
 	</head>
 	<body class="container container-fluid">	
 		<br>
 		<h1 class="display-4" onclick="var audio = new Audio('http://mattersofgrey.com/audio/Minecraft-cow3.mp3'); audio.play()" class="mooo">Cow Clicker!</h1>
+		
 		<div>
 			<hr>
 			<h1><img src="Milk_Bucket.png" alt="Milk: " height="25">&nbsp;<span id="mcount">0</span></h1>
@@ -66,11 +77,21 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div style="background-color: brown; border-radius: 10px; display: none" id="boostDiv">
+					<br>
+					<h3>The Cowinator</span></h3>
+					<p>Speed of everything x2</p>
+					<img src="Cow.png" alt="Cow" height="69" class="mahh" onclick="$('#boostbutton').click()">
+					<button id="boostbutton" onclick="boostCowThingy()" class="btn btn-primary">Boost! (<span id="boostprice">1</span><img src="Milk_Bucket.png" alt="milk bucket" height="15">)</button>
+					<div class="myProgress">
+						<div class="myBar" id="boostthingy"><span style="display: none">0</span></div>
+					</div>
+				</div>
 				<div>
 					<br>
 					<h3>Cow x<span id="bongscount">1</span></h3>
 					<img src="Cow.png" alt="Cow" height="69" onclick="move('boo', 2.5)" class="mooo">
-					<button class="btn btn-secondary" onclick="buy('bongsprice', 'boo', 'bongscount', 2, false, 2.5)">Buy (<span id="bongsprice">1</span><img src="Milk_Bucket.png" alt="milk bucket"height="15">)</button>
+					<button class="btn btn-secondary" onclick="buy('bongsprice', 'boo', 'bongscount', 2, false, 2.5); if ($('#bongscount').html() == 200) {$('#boostDiv').fadeIn();}">Buy (<span id="bongsprice">1</span><img src="Milk_Bucket.png" alt="milk bucket"height="15">)</button>
 					<br>
 					<div class="myProgress">
 						<div class="myBar" id="boo">1</div>
@@ -565,12 +586,14 @@
 		<br>
 		<br>
 		<br>
+		<p style="visibility: hidden">Cool Thingy: NEW faster version <a href="fastmoney.html">here!</a></p>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://epicmc.rocks/derpythingy.js"></script>
         <script>
             var money = 0;
+			var moveSpeed = 0.5;
             function move(bar, speed) {
                 var elem = document.getElementById(bar); 
                 var moneyz = _.num.parseWords($('#' + bar).html());
@@ -587,11 +610,31 @@
                         money += moneyz; 
                     	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
                     } else {
-                        width = width + 0.5;
+                        width = width + moveSpeed;
                         elem.style.width = width + '%';
                     }
                 }
             }
+			
+			function boostCowThingy() {
+				var price = _.num.parseWords($('#boostprice').html());
+				if (money < price) {
+					alert('Not enough milk!');
+				} else {
+					moveSpeed = 1;
+					_.i('#boostbutton').disabled = true;
+					$('.myBar').css('background-color', 'cyan');
+					move('boostthingy', 100);
+					setTimeout(function() {
+						_.i('#boostbutton').disabled = false; 
+						moveSpeed = 0.5; 
+						$('.myBar').css('background-color', '#2da82d');
+						$('#boostprice').html(_.num.withCommas(_.num.formatNumberWords(Math.ceil((_.num.parseWords($('#boostprice').html()) * 1.3 + money)))));
+					}, 10000);
+					money = Math.ceil(money - price);
+                	$('#mcount').html(_.num.withCommas(_.num.formatNumberWords(money)));
+				}
+			}
             
             function buy(priceId, bar, count, origPrice, isAuto, speed) {
                 var price = _.num.parseWords($('#' + priceId).html());
